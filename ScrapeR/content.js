@@ -47,3 +47,33 @@ for (let result of results){
 
 // add overlay to page
 document.body.appendChild(overlay);
+
+// EXPORT AS JSON
+const exportBtn = document.getElementById("export-btn");
+
+exportBtn.addEventListener("click", () => {
+  // 1. Your array of strings
+  const quotes = [
+    "Stay curious.",
+    "Build with clarity.",
+    "Fail fast, learn faster."
+  ];
+
+  // 2. Convert the array to a JSON string
+  const jsonString = JSON.stringify(quotes, null, 2); // pretty print
+
+  // 3. Create a Blob from the JSON string
+  const blob = new Blob([jsonString], { type: "application/json" });
+
+  // 4. Create a temporary anchor element
+  const a = document.createElement("a");
+  const url = URL.createObjectURL(blob);
+  a.href = url;
+  a.download = "quotes.json";
+
+  // 5. Trigger the download
+  a.click();
+
+  // 6. Clean up
+  URL.revokeObjectURL(url);
+});
