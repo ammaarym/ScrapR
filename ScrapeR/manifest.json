@@ -1,0 +1,27 @@
+{
+    "name": "Article Scraper",
+    "manifest_version": 3,
+    "version": "1.0",
+    "description": "scrapes all articles on a page with their link and displays on a popup",
+    "permissions": ["scripting", "tabs"],
+    "host_permissions": ["<all_urls>"],
+    "action": {
+        "default_popup": "popup.html",
+        "default_title": "Show Scrape Button"
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
